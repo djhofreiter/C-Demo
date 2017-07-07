@@ -48,7 +48,17 @@ namespace demo.ConsoleApp
             }
 
             List<Shape> result = shapes.Where(o => o.Area() > 4).ToList();
-            Dictionary<string, Shape> dict = new Dictionary<string, Shape>();
+            var rectList = shapes.Where(r => r is Shapes.Rectangle).ToList();
+
+            foreach (var item in rectList)
+            {
+                Console.WriteLine(item.GetType());
+                Console.WriteLine(item);
+            }
+
+            var trilist = (from t in shapes where t is Shapes.Triangle select t).ToList();
+
+            Dictionary < string, Shape> dict = new Dictionary<string, Shape>();
 
             Console.ReadLine();
 

@@ -43,6 +43,7 @@ namespace ConsoleApplication.Shapes
             return width * length;
         }
 
+
         public String GetShapeInfo()
         {
             string result = "";
@@ -55,6 +56,18 @@ namespace ConsoleApplication.Shapes
         public override string ToString()
         {
             return $"The shape: {GetShapeInfo()}";
+        }
+
+        public int ShapeLength
+        {
+            get { return ShapeLength; }
+            set { length = value; }
+        }
+
+        public int ShapeWidth
+        {
+            get { return ShapeWidth; }
+            set { width = value; }
         }
     }
     
